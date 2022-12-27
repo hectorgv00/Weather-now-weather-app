@@ -1,19 +1,18 @@
 import "./App.css";
-import { getApi } from "./Services/Services.ts";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Containers/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
-
+import Dashboard from "./Containers/Dashboard/Dashboard";
 
 function App() {
-  getApi();
 
   return (
     <>
       <BrowserRouter>
-      <Navbar/>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </>

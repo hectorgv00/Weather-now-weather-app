@@ -1,0 +1,10 @@
+.imgDesign{
+    height: 7vh;
+    width: 7vh;
+}
+.navbarDesign{
+    position: fixed;
+    height: 10vh;
+    width: 100%;
+    border-bottom: 2px solid var(--darkBlue);
+}

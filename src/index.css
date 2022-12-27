@@ -1,13 +1,84 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  /* Colors */
+
+  --white: #f2f6f7;
+  --darkBlue: #2d3686;
+  --purple: #805df3;
+  --green: #18ceab;
+
+  /* Fonts */
+  --title: "Cairo", sans-serif;
+  --subTitle: "Fira Sans Condensed", sans-serif;
+  /* Sizes */
+  --big: 5em;
+  --medium: 2.5em;
+  --small: 1.5em;
+}
+
+/* Colors */
+
+.white2 {
+  color: var(--white);
+}
+
+.darkBlue {
+  color: var(--darkBlue);
+}
+
+.purple {
+  color: var(--purple);
+}
+
+.green {
+  color: var(--green);
+}
+
+.bg-white2 {
+  background-color: var(--white);
+}
+
+.bg-darkBlue {
+  background-color: var(--darkBlue);
+}
+
+.bg-purple {
+  background-color: var(--purple);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+/* Font */
+
+/* --size */
+.fs-big {
+  font-size: var(--big);
+}
+.fs-medium {
+  font-size: var(--medium);
+}
+.fs-small {
+  font-size: var(--small);
+}
+
+/* --family */
+
+.ff-title {
+  font-family: var(--title);
+}
+
+.ff-subTitle {
+  font-family: var(--subTitle);
+}
+
+/* Pointer */
+
+.pointer{
+  cursor: pointer;
 }

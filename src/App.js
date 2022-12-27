@@ -1,15 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import { getApi } from './Services/Services.ts'
+import "./App.css";
+import { getApi } from "./Services/Services.ts";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Containers/Home/Home";
+import Navbar from "./Components/Navbar/Navbar";
+
 
 function App() {
-
-  getApi()
+  getApi();
 
   return (
-    <div className="App">
-     
-    </div>
+    <>
+      <BrowserRouter>
+      <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

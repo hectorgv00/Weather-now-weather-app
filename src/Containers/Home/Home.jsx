@@ -7,13 +7,13 @@ function Home(props) {
 
   return (
     <div className="vh-100 d-flex justify-content-center align-items-center bg-white2 flex-column">
-      <h1 className="darkBlue ff-subTitle fw-bolder fs-big">Weather Now</h1>
-      <p className="purple ff-subTitle fw-bolder fs-medium">
+      <h1 className="darkBlue ff-subTitle fw-bolder fs-big text-center">Weather Now</h1>
+      <p className="purple ff-subTitle fw-bolder fs-medium text-center">
         The weather app you need
       </p>
       <div className="dashboardButton bg-green white2 d-flex align-items-center justify-content-center">
         <p
-          className="ff-subtitle pt-3 pointer fw-bold"
+          className="ff-subtitle pt-3 pointer fw-bold "
           onClick={() => navigate("/dashboard")}
         >
           Dashboard

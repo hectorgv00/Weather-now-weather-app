@@ -10,3 +10,15 @@
     background-color: #13a98b;
     transition: .3s linear all;
 }
+
+@media (max-width: 1080px){
+    .dashboardButton{
+        width: 20vw;
+    }
+}
+
+@media (max-width: 500px){
+    .dashboardButton{
+        width: 50vw;
+    }
+}

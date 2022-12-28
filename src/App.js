@@ -6,15 +6,15 @@ import Dashboard from "./Containers/Dashboard/Dashboard";
 import { CityContext } from "./Services/CityContext";
 import { useState } from "react";
 
-
 function App() {
-
-  const [context, setContext] = useState("Valencia,spain")
+  // Setting context useState and setting the default data as "Valencia,spain"
+  const [context, setContext] = useState("Valencia,spain");
 
   return (
     <>
       <BrowserRouter>
-        <CityContext.Provider value={{context, setContext}}>
+        {/* Envolving every container with the provider so it can be reached from any point */}
+        <CityContext.Provider value={{ context, setContext }}>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

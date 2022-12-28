@@ -1,3 +1,4 @@
-import { createContext } from "react"
+import { createContext } from "react";
 
-export const CityContext = createContext("") 
+// The context that will be used in the whole project is created here
+export const CityContext = createContext("");

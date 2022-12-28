@@ -4,9 +4,12 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
 function LineChart({ forecastData, type }) {
+  // The dates from the data will be soraged here
   const [dates, setDates] = useState([]);
+  // Depending on the type, the data received from the API will be stored in one of the below
   const [dataType1, setDataType1] = useState([]);
   const [dataType2, setDataType2] = useState([]);
+  // Sets the chart structure
   const [lineChart, setLineChar] = useState({
     labels: "",
     datasets: [
@@ -28,6 +31,7 @@ function LineChart({ forecastData, type }) {
     responsive: true,
   };
 
+  // Filtering the data so we can map the information that we need to show
   useEffect(() => {
     let list = forecastData?.list;
     let filteredDates = list?.filter((l, index) => index % 4);
@@ -36,6 +40,7 @@ function LineChart({ forecastData, type }) {
     setDataType2(filteredDates?.map((date) => date.wind.speed));
   }, [forecastData]);
 
+  // Filling the Chart
   useEffect(() => {
     switch (type) {
       case "humidity":
@@ -79,6 +84,7 @@ function LineChart({ forecastData, type }) {
     }
   }, [dataType2, dataType1]);
 
+  // If forecastData was undefined, a spinner would appear
   if (forecastData === undefined) {
     return (
       <div className="d-flex vh-100 align-items-center justify-content-center">

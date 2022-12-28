@@ -1,21 +1,20 @@
-.vh-40{
-    height: 40vh;
+.vh-40 {
+  height: 40vh;
 }
 
-.rowDesign{
-    height: 10vh;
+.rowDesign {
+  height: 10vh;
 }
 
-.linkDesign{
-    min-width: 15vh;
-    min-height: 4vh;
-    border-radius: 15px;
-    background-color: var(--darkBlue);
-    transition: all .3s linear;
-
+.linkDesign {
+  min-width: 15vh;
+  min-height: 4vh;
+  border-radius: 15px;
+  background-color: var(--darkBlue);
+  transition: all 0.3s linear;
 }
 
-.linkDesign:hover{
-    background-color: var(--purple);
-    transition: all .3s linear;
+.linkDesign:hover {
+  background-color: var(--purple);
+  transition: all 0.3s linear;
 }

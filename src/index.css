@@ -21,7 +21,6 @@
   --small: 1.5em;
 }
 
-
 /* Colors */
 
 .white2 {
@@ -81,6 +80,6 @@
 
 /* Pointer */
 
-.pointer{
+.pointer {
   cursor: pointer;
 }

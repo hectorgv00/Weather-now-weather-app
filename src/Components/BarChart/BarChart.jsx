@@ -13,27 +13,25 @@ import {
 Chartjs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 function BarChart({ forecastData }) {
+  // The dates from the data will be soraged here
   const [dates, setDates] = useState([]);
+  // The data received from the API will be stored in data
   const [data, setData] = useState([]);
+  // Sets the chart structure
   const [barChar, setBarChar] = useState({
     labels: "",
     datasets: [
       {
         label: ``,
         data: data,
-        backgroundColor: [
-          "",
-        ],
-        borderColor: [
-          "",
-        ],
+        backgroundColor: [""],
+        borderColor: [""],
         borderWidth: 1,
       },
     ],
-  })
+  });
 
-
-
+  // Filtering the data so we can map the information that we need to show
   useEffect(() => {
     let list = forecastData?.list;
     let filteredDates = list?.filter((l, index) => index % 4);
@@ -41,7 +39,8 @@ function BarChart({ forecastData }) {
     setData(filteredDates?.map((date) => date.main.temp - 273.15));
   }, [forecastData]);
 
-  useEffect(()=>{
+  // Filling the Chart
+  useEffect(() => {
     setBarChar({
       labels: dates,
       datasets: [
@@ -67,23 +66,21 @@ function BarChart({ forecastData }) {
           borderWidth: 1,
         },
       ],
-    })
-  },[data])
+    });
+  }, [data]);
 
+  // If forecastData was undefined, a spinner would appear
   if (!forecastData) {
     return (
       <div className="d-flex vh-100 align-items-center justify-content-center">
-        <div className="spinner-border text-primary" role="status">
-        </div>
+        <div className="spinner-border text-primary" role="status"></div>
       </div>
     );
   }
 
   return (
     <>
-      <Bar 
-      data={barChar} 
-      />
+      <Bar data={barChar} />
     </>
   );
 }

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./BarChart.css";
 import { Bar } from "react-chartjs-2";
-import { getApiForectast } from "../../Services/Services";
 import {
   Chart as Chartjs,
   BarElement,
@@ -16,7 +15,6 @@ Chartjs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 function BarChart({ forecastData }) {
   const [dates, setDates] = useState([]);
   const [data, setData] = useState([]);
-  const [isLoadingForecast, setIsLoadingForecast] = useState(true);
   const [barChar, setBarChar] = useState({
     labels: "",
     datasets: [
@@ -72,7 +70,7 @@ function BarChart({ forecastData }) {
     })
   },[data])
 
-  if (forecastData === undefined) {
+  if (!forecastData) {
     return (
       <div className="d-flex vh-100 align-items-center justify-content-center">
         <div className="spinner-border text-primary" role="status">

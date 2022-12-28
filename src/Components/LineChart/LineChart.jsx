@@ -34,8 +34,6 @@ function LineChart({ forecastData, type }) {
     setDates(filteredDates?.map((l) => l.dt_txt.slice(5, 16)));
     setDataType1(filteredDates?.map((date) => date.main.humidity));
     setDataType2(filteredDates?.map((date) => date.wind.speed));
-    console.log(dataType1)
-    console.log(dataType2)
   }, [forecastData]);
 
   useEffect(() => {

@@ -45,10 +45,10 @@ function LineChart({ forecastData }) {
           data: data,
           fill: {
             target: "origin",
-            above: "#FF9A5A1F",
-            below: "#FF9A5A1F",
+            above: "rgba(128, 93, 243, .5)",
+            below: "#18ceab",
           },
-          backgroundColor: "rgb(75, 192, 192)",
+          backgroundColor: "#B0413E",
           tension: 0.1
         },
       ],

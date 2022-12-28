@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./BarChart.css";
 import { Bar } from "react-chartjs-2";
-import { getApiForectast, getApiWeather } from "../../Services/Services";
+import { getApiForectast } from "../../Services/Services";
 import {
   Chart as Chartjs,
   BarElement,
@@ -13,8 +13,7 @@ import {
 
 Chartjs.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-function BarChart({ city }) {
-  const [forecastData, setForecastData] = useState([]);
+function BarChart({ forecastData }) {
   const [dates, setDates] = useState([]);
   const [data, setData] = useState([]);
   const [isLoadingForecast, setIsLoadingForecast] = useState(true);
@@ -36,19 +35,12 @@ function BarChart({ city }) {
   })
 
 
-  useEffect(() => {
-    getApiForectast(city)
-      .then((data) => setForecastData(data))
-      .then(setIsLoadingForecast(false));
-  }, [city]);
 
   useEffect(() => {
     let list = forecastData?.list;
     let filteredDates = list?.filter((l, index) => index % 4);
     setDates(filteredDates?.map((l) => l.dt_txt.slice(5, 16)));
     setData(filteredDates?.map((date) => date.main.temp - 273.15));
-    console.log(filteredDates);
-    console.log(data);
   }, [forecastData]);
 
   useEffect(()=>{
@@ -80,7 +72,7 @@ function BarChart({ city }) {
     })
   },[data])
 
-  if (isLoadingForecast) {
+  if (forecastData === undefined) {
     return (
       <div className="d-flex vh-100 align-items-center justify-content-center">
         <div className="spinner-border text-primary" role="status">

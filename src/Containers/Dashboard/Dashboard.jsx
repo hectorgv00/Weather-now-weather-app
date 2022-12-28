@@ -30,7 +30,7 @@ function Dashboard() {
   return (
     <div className="container-fluid bg-white2">
       <div className="row">
-        <div className="col-12 d-flex justify-content-around align-items-center rowDesign">
+        <div className="col-12 col-md-6 d-flex justify-content-around align-items-center rowDesign">
           {/* Buttons */}
           <p
             className="linkDesign d-flex align-items-center justify-content-center text-center pointer ff-title white2"
@@ -44,6 +44,9 @@ function Dashboard() {
           >
             Madrid
           </p>
+          </div>
+          <div className="col-12 col-md-6 d-flex justify-content-around align-items-center rowDesign">
+
           <p
             className="linkDesign d-flex align-items-center justify-content-center text-center pointer ff-title white2"
             onClick={() => setCity("London,uk")}

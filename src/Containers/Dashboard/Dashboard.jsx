@@ -23,10 +23,10 @@ function Dashboard(props) {
       <div className="container-fluid bg-white2">
         <div className="row">
           <div className="col-12 d-flex justify-content-around align-items-center rowDesign">
-            <p>Valencia</p>
-            <p>Madrid</p>
-            <p>London</p>
-            <p>Dubai</p>
+            <p className="linkDesign text-center pointer ff-title white2">Valencia</p>
+            <p className="linkDesign text-center pointer ff-title white2">Madrid</p>
+            <p className="linkDesign text-center pointer ff-title white2">London</p>
+            <p className="linkDesign text-center pointer ff-title white2">Dubai</p>
           </div>
         </div>
         <div className="row">

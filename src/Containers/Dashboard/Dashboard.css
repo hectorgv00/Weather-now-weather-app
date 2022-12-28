@@ -2,8 +2,20 @@
     height: 40vh;
 }
 
-.percentage100{
-    width: 100%;
-    height: 100%;
-    }
-    
+.rowDesign{
+    height: 10vh;
+}
+
+.linkDesign{
+    min-width: 15vh;
+    min-height: 4vh;
+    border-radius: 15px;
+    background-color: var(--darkBlue);
+    transition: all .3s linear;
+
+}
+
+.linkDesign:hover{
+    background-color: var(--purple);
+    transition: all .3s linear;
+}

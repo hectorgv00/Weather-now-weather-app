@@ -31,7 +31,7 @@ function LineChart({ forecastData }) {
     let list = forecastData?.list;
     let filteredDates = list?.filter((l, index) => index % 4);
     setDates(filteredDates?.map((l) => l.dt_txt.slice(5, 16)));
-    setData(filteredDates?.map((date) => date.main.temp - 273.15));
+    setData(filteredDates?.map((date) => date.main.humidity));
     console.log(filteredDates);
     console.log(dates);
   }, [forecastData]);
@@ -41,7 +41,7 @@ function LineChart({ forecastData }) {
       labels: dates,
       datasets: [
         {
-          label: `Temperature in ${forecastData?.city?.name} in ºC`,
+          label: `Humidity in ${forecastData?.city?.name} in %`,
           data: data,
           fill: {
             target: "origin",

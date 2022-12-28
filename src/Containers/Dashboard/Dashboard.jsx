@@ -3,6 +3,7 @@ import "./Dashboard.css"
 import BarChart from "../../Components/BarChart/BarChart";
 import LineChart from "../../Components/LineChart/LineChart";
 import { getApiForectast } from "../../Services/Services";
+import DoubleBarChart from "../../Components/DoubleBarChart/DoubleBarChart";
 
 function Dashboard(props) {
 
@@ -36,7 +37,7 @@ function Dashboard(props) {
         <div className="row">
           
           <div className="col-md-6 vh-40 d-flex align-items-center justify-content-center bg-white2">
-              <BarChart city={city}  forecastData={forecastData} />
+              <DoubleBarChart city={city}  forecastData={forecastData} />
           </div>
           
 

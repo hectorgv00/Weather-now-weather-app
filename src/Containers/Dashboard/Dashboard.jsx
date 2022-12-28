@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, {  useContext, useEffect, useState } from "react";
 import "./Dashboard.css"
 import BarChart from "../../Components/BarChart/BarChart";
 import LineChart from "../../Components/LineChart/LineChart";
 import { getApiForectast } from "../../Services/Services";
 import DoubleBarChart from "../../Components/DoubleBarChart/DoubleBarChart";
+import { CityContext } from "../../Services/CityContext";
+
 
 function Dashboard(props) {
 
+  const {context, setContext} = useContext(CityContext)
   const [forecastData, setForecastData] = useState([]);
-
-
-  const city = "Madrid,spain"
+  const city = context  
 
 
   useEffect(() => {
@@ -23,10 +24,10 @@ function Dashboard(props) {
       <div className="container-fluid bg-white2">
         <div className="row">
           <div className="col-12 d-flex justify-content-around align-items-center rowDesign">
-            <p className="linkDesign text-center pointer ff-title white2">Valencia</p>
-            <p className="linkDesign text-center pointer ff-title white2">Madrid</p>
-            <p className="linkDesign text-center pointer ff-title white2">London</p>
-            <p className="linkDesign text-center pointer ff-title white2">Dubai</p>
+            <p className="linkDesign d-flex align-items-center justify-content-center text-center pointer ff-title white2" onClick={() => setContext("Valencia,spain")}>Valencia</p>
+            <p className="linkDesign d-flex align-items-center justify-content-center text-center pointer ff-title white2" onClick={() => setContext("Madrid,spain")}>Madrid</p>
+            <p className="linkDesign d-flex align-items-center justify-content-center text-center pointer ff-title white2" onClick={() => setContext("London,uk")}>London</p>
+            <p className="linkDesign d-flex align-items-center justify-content-center text-center pointer ff-title white2" onClick={() => setContext("Dubai, AE")}>Dubai</p>
           </div>
         </div>
         <div className="row">

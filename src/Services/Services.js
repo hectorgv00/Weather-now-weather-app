@@ -16,7 +16,7 @@ export const getApiWeather = async (place) => {
 export const getApiForectast = async (place) => {
   try {
     let resp = await axios.get(`${API_URL_FORECAST}${place}${API_KEY}`);
-    return resp
+    return resp.data
   } catch (error) {
     console.log(error);
   }

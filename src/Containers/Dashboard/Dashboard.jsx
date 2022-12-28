@@ -20,7 +20,15 @@ function Dashboard(props) {
 
 
     return (
-      <div className="container-fluid vh-100">
+      <div className="container-fluid bg-white2">
+        <div className="row">
+          <div className="col-12 d-flex justify-content-around align-items-center rowDesign">
+            <p>Valencia</p>
+            <p>Madrid</p>
+            <p>London</p>
+            <p>Dubai</p>
+          </div>
+        </div>
         <div className="row">
           
           <div className="col-md-6 vh-40 d-flex align-items-center justify-content-center bg-white2">
@@ -29,7 +37,7 @@ function Dashboard(props) {
           
 
           <div className="col-md-6 vh-40  d-flex align-items-center justify-content-center bg-white2">
-            <LineChart city = {city} forecastData={forecastData} className="percentage100"/>
+            <LineChart city = {city} forecastData={forecastData} type = {"humidity"} option ={"main"}/>
           </div>
           
         </div>
@@ -42,7 +50,7 @@ function Dashboard(props) {
           
 
           <div className="col-md-6 vh-40 d-flex align-items-center justify-content-center bg-white2">
-              <BarChart city={city}  forecastData={forecastData} />
+          <LineChart city = {city} forecastData={forecastData} type = {"wind"} />
           </div>
           
         </div>

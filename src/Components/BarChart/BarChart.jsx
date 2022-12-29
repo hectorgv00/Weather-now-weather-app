@@ -70,7 +70,7 @@ function BarChart({ forecastData }) {
   }, [data]);
 
   // If forecastData was undefined, a spinner would appear
-  if (!forecastData) {
+  if (!forecastData || forecastData?.city?.name === undefined) {
     return (
       <div className="d-flex vh-100 align-items-center justify-content-center">
         <div className="spinner-border text-primary" role="status"></div>

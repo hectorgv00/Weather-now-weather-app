@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function App() {
   // Setting context useState and setting the default data as "Valencia,spain"
-  const [context, setContext] = useState("Valencia,spain");
+  const [context, setContext] = useState("Valencia,Spain");
 
   return (
     <>

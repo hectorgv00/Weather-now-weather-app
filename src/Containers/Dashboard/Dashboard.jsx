@@ -23,6 +23,7 @@ function Dashboard() {
 
   // Setting the city in the localStorage and in Context
   const setCity = (city) => {
+    localStorage.removeItem(city)
     localStorage.setItem("city", city);
     setContext(city);
   };

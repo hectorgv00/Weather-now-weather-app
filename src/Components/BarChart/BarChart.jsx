@@ -45,7 +45,7 @@ function BarChart({ forecastData }) {
       labels: dates,
       datasets: [
         {
-          label: `Temperature in ${forecastData?.city?.name}`,
+          label: `Temperature in ${forecastData?.city?.name} in ºC`,
           data: data,
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
